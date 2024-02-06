@@ -36,8 +36,15 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 - you used docker compose file to make a postgres container
 - you used tableplus to access the table you made
 
+## on clicking play you get an error that you don't have springboot
+- you updated java version
+- instead of clicking play, use dropdown on the LiveApplication.java file and select run java
 
 # Terminal Commands
+
+## how to update java version
+brew install openjdk@17
+sudo ln -sfn /usr/local/opt/openjdk@17/libexec/openjdk.jdk /Library/Java/JavaVirtualMachines/openjdk-17.jdk
 
 ## how to run docker compost file
 docker compose up -d java_db
