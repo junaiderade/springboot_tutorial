@@ -38,6 +38,7 @@ https://github.com/FrancescoXX/java-live-api
 - do mvn clean package -DskipTests
 - make sure docker containers r working
 - docker compose build
+- run with docker compose up
 - make post request with raw data with json and put
 {
 "id":2,
