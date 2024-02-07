@@ -33,6 +33,7 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 ## how to test
 - go to UserController.java and run teh java from play button dropdown!
 - in postman, use get request to localhost:8080/api/users
+- do mvn clean package
 
 # Errors
 
