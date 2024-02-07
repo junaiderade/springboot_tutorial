@@ -3,10 +3,12 @@
 ## general
 - you are following this tutorial:
 https://www.youtube.com/watch?v=Nefd6qdpdSI
+https://github.com/FrancescoXX/java-live-api
 - the container is a jar file inside an image
+- docker acts as a wrapper around springboot
 
 ## prereqs
-- docker installed and running
+- docker installed and running! the postgres:12 image
 - have java 17 installed on the machine and used (use java --version to check)
 - VSCode Spring Initializr Java Support Extension
 - VSCode Extension Pack for Java
@@ -33,8 +35,15 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 ## how to test
 - go to UserController.java and run teh java from play button dropdown!
 - in postman, use get request to localhost:8080/api/users
-- do mvn clean package
-
+- do mvn clean package -DskipTests
+- make sure docker containers r working
+- docker compose build
+- make post request with raw data with json and put
+{
+"id":2,
+"name": "Anakin Skywalker",
+"email": "as@gmail.com"
+}
 # Errors
 
 ## on clicking play as soon as you create project from LiveApplication.java file
@@ -50,10 +59,25 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 ## org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
 - you had mispelling in your application.properties
 
+## http://cwiki.apache.org/confluence/display/MAVEN/MissingProjectException
+- you ran from the wrong folder
+
+## LiveApplicationTests.contextLoads » IllegalState Failed to load ApplicationContext for [WebMergedContextConfiguration@2a39aa2b testClass
+- probably not the best way but do mvn clean package -DskipTests
+- this is just building the image, you don't need to connect DB when building image which is why you get this error
+- after this it will be a dockerized java app
+
+
 # Terminal Commands
 
-## How to remove a specific commit
+## how to build docker image
+docker compose build
+this is not a needed step its for demo purposes
 
+## how to build jar
+mvn clean package
+
+## How to remove a specific commit
 git rebase -i HEAD~5 (this brings up the last 5 commits in vim)
 press d and then delete the line you want
 git push --force
@@ -84,18 +108,18 @@ docker run -it -v /Users/junaidmohamed/Documents/code/in_progress/springboot_tut
 use exit to exit
 
 ## How to check java version
-
 java --version
 
 ## How to check if docker is installed on the system
-
 docker --version
 
 ## How to start docker service
-
 sudo service docker start
 
 # Definitions
+
+## JDBC
+JDBC (Java Database Connectivity) is an API (Application Programming Interface) for the Java programming language that defines how a client may access a database. It provides methods for querying and updating data in a database, and is oriented towards relational databases. JDBC is a key part of the Java Standard Edition platform from Oracle Corporation.
 
 ## Java Annotations
 a form of metadata that provide data about a program but are not part of the program itself. Annotations have no direct effect on the operation of the code they annotate. However, they can be used by the compiler or at runtime by various tools and frameworks to generate code, configure frameworks, or apply certain checks. 
