@@ -3,13 +3,15 @@
 ## general
 - you are following this tutorial:
 https://www.youtube.com/watch?v=Nefd6qdpdSI
+- the container is a jar file inside an image
 
 ## prereqs
 - docker installed and running
-- have java installed on the machine
+- have java 17 installed on the machine and used (use java --version to check)
 - VSCode Spring Initializr Java Support Extension
 - VSCode Extension Pack for Java
 - TablePlus app
+- Postman
 
 ## how you set up project using VSCode
 1. right click
@@ -28,6 +30,10 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 ## how to connect Java to Dockerized Postgres Table
 - go to application.properties in resources and edit that
 
+## how to test
+- go to UserController.java and run teh java from play button dropdown!
+- in postman, use get request to localhost:8080/api/users
+
 # Errors
 
 ## on clicking play as soon as you create project from LiveApplication.java file
@@ -40,7 +46,13 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 - you updated java version
 - instead of clicking play, use dropdown on the LiveApplication.java file and select run java
 
+## org.postgresql.util.PSQLException: ERROR: relation "users" does not exist
+- you had mispelling in your application.properties
+
 # Terminal Commands
+
+## JAR File
+A JAR (Java ARchive) file is a package file format typically used to aggregate many Java class files and associated metadata and resources (text, images, etc.) into one file for distribution. These files are archive files that use the ZIP format to bundle and compress the contents. JAR files are a fundamental distribution mechanism for Java applications, facilitating the deployment and execution of software written in the Java programming language.
 
 ## how to update java version
 brew install openjdk@17
@@ -78,8 +90,11 @@ sudo service docker start
 
 # Definitions
 
+## Java Annotations
+a form of metadata that provide data about a program but are not part of the program itself. Annotations have no direct effect on the operation of the code they annotate. However, they can be used by the compiler or at runtime by various tools and frameworks to generate code, configure frameworks, or apply certain checks. 
+
 ## TablePlus app
-- a sql app for multiple databases
+a sql app for multiple databases
 
 ## Docker Compose File
 a file to define containers which are basically services
