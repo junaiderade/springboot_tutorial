@@ -52,6 +52,12 @@ https://www.youtube.com/watch?v=Nefd6qdpdSI
 
 # Terminal Commands
 
+## How to remove a specific commit
+
+git rebase -i HEAD~5 (this brings up the last 5 commits in vim)
+press d and then delete the line you want
+git push --force
+
 ## JAR File
 A JAR (Java ARchive) file is a package file format typically used to aggregate many Java class files and associated metadata and resources (text, images, etc.) into one file for distribution. These files are archive files that use the ZIP format to bundle and compress the contents. JAR files are a fundamental distribution mechanism for Java applications, facilitating the deployment and execution of software written in the Java programming language.
 
